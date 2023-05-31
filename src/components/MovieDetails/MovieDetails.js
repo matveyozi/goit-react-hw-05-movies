@@ -16,9 +16,9 @@ export default function MovieDetails() {
 			setMovie(res);
 			console.log(res);
 		})
-		if (!movie) return;
 	}, [movieId])
 	//   /movies/:movieId
+	if (!movie) return;
 	// console.log(location);
 	// console.log(backLinkLocationRef);
 	const {  title, name, release_date, vote_average, overview, poster_path } = movie;

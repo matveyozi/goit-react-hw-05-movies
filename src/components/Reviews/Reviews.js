@@ -11,13 +11,13 @@ export default function Reviews() {
 			return setReviews(results)
 		});
 
-		if (!reviews) return;
 	}, [movieId])
 	//   /movies/:movieId
-
+	
+	if (!reviews) return;
 	return (
 		
-		<ul>Reviews: {movieId}
+		<ul>
 		
 		{reviews.map(({ author, content, id }) => {
 			return (

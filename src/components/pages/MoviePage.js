@@ -2,7 +2,6 @@ import { getSearch } from 'api/api';
 import MovieList from 'components/MovieList/MovieList';
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
 import { useSearchParams } from 'react-router-dom';
 export default function MoviePage() {
 
@@ -15,12 +14,12 @@ export default function MoviePage() {
 		getSearch(movieName).then(({ results }) => setMovies(results))
 	}, [movieName])
 	//   /movies/:movieName
-	const location = useLocation()
+	
 
 	const submitForm = (e) => {
 		e.preventDefault()
 		const movieNameValue = e.target.elements.search.value;
-		if (movieNameValue == '') {
+		if (movieNameValue === '') {
 			return setSearchParams({})
 		} else {
 

@@ -1,4 +1,4 @@
-import { NavLink, Route, Routes } from "react-router-dom";
+import {  Route, Routes } from "react-router-dom";
 import { lazy } from "react";
 import Layout from "./Layout/Layout";
 // import HomePage from "./pages/HomePage";
@@ -6,7 +6,6 @@ import Layout from "./Layout/Layout";
 // import MovieDetails from "./pages/MovieDetails";
 // import {Cast} from "./Cast";
 import Reviews from "./Reviews/Reviews";
-import { getTrend } from "api/api";
 
 
 

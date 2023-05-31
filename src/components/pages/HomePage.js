@@ -1,4 +1,4 @@
-import { getDetails, getTrend } from 'api/api'
+import {  getTrend } from 'api/api'
 import MovieList from 'components/MovieList/MovieList'
 import React, { useEffect, useState } from 'react'
 
