@@ -8,7 +8,6 @@ export default function MoviePage() {
 	const [movies, setMovies] = useState([])
 	const [searchParams, setSearchParams] = useSearchParams();
 	const movieName = searchParams.get('movieName') ?? '';
-	console.log(movieName);
 	useEffect(() => {
 		if (!movieName) return;
 		getSearch(movieName).then(({ results }) => setMovies(results))
@@ -26,13 +25,10 @@ export default function MoviePage() {
 			setSearchParams({ movieName: movieNameValue })
 		}
 
-		// const nextParams = name !== '' ? { name } : {};
-		// setSearchParams(nextParams)
 	}
 
 
 
-	// console.log(location)
 
 	return (
 		<>
@@ -40,7 +36,7 @@ export default function MoviePage() {
 				<input type='text' name='search' />
 				<button type='submit'>GO</button>
 			</form>
-		{console.log(movies)}
+		
 			<MovieList movies={movies} />
 		</>
 	)

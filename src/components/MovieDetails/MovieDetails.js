@@ -1,7 +1,7 @@
 import { getDetails } from 'api/api';
 import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom'
-
+import { ButtonToBack } from './DetailsStyle.styled';
 
 
 export default function MovieDetails() {
@@ -14,22 +14,21 @@ export default function MovieDetails() {
 	useEffect(() => {
 		getDetails(movieId).then(res => {
 			setMovie(res);
-			console.log(res);
+			
 		})
 	}, [movieId])
-	//   /movies/:movieId
+	
 	if (!movie) return;
-	// console.log(location);
-	// console.log(backLinkLocationRef);
-	const {  title, name, release_date, vote_average, overview, poster_path } = movie;
+	
+	const {  title, name, release_date,  overview, poster_path } = movie;
 	const genres = movie.genres?.map(genre => genre.name).join(', ');
 	return (
 
 		<>
-			{/* {console.log(movie)} */}
+			
 
-			<Link to={backLinkLocationRef.current}>Go to back</Link>
-			<img src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : 'NO POST'} />
+			<ButtonToBack to={backLinkLocationRef.current}>Go to back</ButtonToBack>
+			<img alt={title || name || 'no name'} src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : 'NO POST'} />
 			<h2> {title || name || 'no name'} {release_date?.split('-')[0] || 'dsa'}
 			</h2>
 			<hr />
