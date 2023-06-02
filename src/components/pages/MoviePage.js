@@ -33,7 +33,7 @@ export default function MoviePage() {
 	return (
 		<>
 			<form onSubmit={submitForm}>
-				<input type='text' name='search' />
+				<input type='text' placeholder='Search...' name='search' />
 				<button type='submit'>GO</button>
 			</form>
 		

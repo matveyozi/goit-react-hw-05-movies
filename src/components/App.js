@@ -26,7 +26,6 @@ const Cast = lazy(() => import('./Cast/Cast').then(module => {
 const App = () => {
   return (
     <div>
-
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -36,10 +35,7 @@ const App = () => {
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
-
       </Routes>
-
-
     </div>
   );
 };

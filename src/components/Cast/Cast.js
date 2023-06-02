@@ -25,7 +25,6 @@ export function Cast() {
 					<img alt={character} src={profile_path ? `https://image.tmdb.org/t/p/w500/${profile_path}` : 'NO POST' } />
 					<h3>{name}</h3>
 					<h3>{character}</h3>
-					
 				</li>
 			)
 		})}
