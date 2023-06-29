@@ -1,5 +1,6 @@
 import { getSearch } from 'api/api';
 import MovieList from 'components/MovieList/MovieList';
+import { nanoid } from 'nanoid';
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom';
@@ -28,8 +29,6 @@ export default function MoviePage() {
 	}
 
 
-
-
 	return (
 		<>
 			<form onSubmit={submitForm}>
@@ -37,7 +36,7 @@ export default function MoviePage() {
 				<button type='submit'>GO</button>
 			</form>
 		
-			<MovieList movies={movies} />
+			<MovieList key={nanoid()} movies={movies} />
 		</>
 	)
 }

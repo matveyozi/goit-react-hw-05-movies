@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+
+
+export const Grid = styled.div`
+display: grid;
+
+`
+
 export const ButtonToBack = styled(Link)`
 	display:flex;
 	border: 1px solid black;
@@ -10,4 +17,5 @@ export const ButtonToBack = styled(Link)`
 	font-size:18px;
 	justify-content:center;
 	align-items:center;
+	margin-bottom: 20px;
 `

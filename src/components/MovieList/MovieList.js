@@ -1,18 +1,22 @@
 import { Link, useLocation } from 'react-router-dom';
-import { StyleListItem } from './MovieListStyle.styled';
-export default function MovieList({movies}) {
+import { StyleList, /* StyleListItem */ } from './MovieListStyle.styled';
+import { ContainerStyled } from 'components/Container/Container.styled';
+import MovieListItem from './MovieListItem';
+export default function MovieList({ movies }) {
   const location = useLocation();
-
-
   return (
-    <ul>
-      <ul>
-        {movies.map(({id, title, name}) => {
-          return <StyleListItem key={id}>
-            <Link to={`/movies/${id}`} state={{ from: location }}>{title || name}</Link>
-          </StyleListItem>
+    <ContainerStyled>
+      <StyleList>
+        {console.log(movies)}
+        {movies.map((item) => {
+          return <Link key={item.id} to={`/movies/${item.id}`} state={{ from: location }}>
+            <MovieListItem  element={item} >
+            </MovieListItem>
+          </Link>
         })}
-      </ul>
-  </ul>
+      </StyleList>
+    </ContainerStyled>
+
+
   )
 }
