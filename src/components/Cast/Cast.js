@@ -18,17 +18,20 @@ export function Cast() {
 	//   /movies/:movieId
 
 	if (!movieCast) return;
-	return <ul className={css['gallery__list']}>
+	return <>
+		<hr/>
+		<ul className={css['gallery__list']}>
 
-		{movieCast.map(({ id, name, character, profile_path }) => {
-			return (
-				<StyleListItem>
-					<img className={css['gallery__item-img']} alt={character} src={profile_path ? `https://image.tmdb.org/t/p/w500/${profile_path}` : 'NO POST'} />
-					<h3>{name}</h3>
-					<h3>{character}</h3>
-				</StyleListItem>
+			{movieCast.map(({ id, name, character, profile_path }) => {
+				return (
+					<StyleListItem>
+						<img className={css['gallery__item-img']} alt={character} src={profile_path ? `https://image.tmdb.org/t/p/w500/${profile_path}` : 'NO POST'} />
+						<h3>{name}</h3>
+						<h3>{character}</h3>
+					</StyleListItem>
 
-			)
-		})}
-	</ul>
+				)
+			})}
+		</ul>
+	</>
 }

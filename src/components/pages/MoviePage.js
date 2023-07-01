@@ -1,9 +1,12 @@
 import { getSearch } from 'api/api';
+import { ContainerStyled } from 'components/Container/Container.styled';
 import MovieList from 'components/MovieList/MovieList';
 import { nanoid } from 'nanoid';
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+import { FaSearchengin } from 'react-icons/fa';
 import { useSearchParams } from 'react-router-dom';
+import { SearchButtonStyled, SearchFormStyled, SearchInputStyled } from './PagesStyled.styled';
 export default function MoviePage() {
 
 	const [movies, setMovies] = useState([])
@@ -25,16 +28,16 @@ export default function MoviePage() {
 
 			setSearchParams({ movieName: movieNameValue })
 		}
-
+		e.target.reset()
 	}
-
-
 	return (
 		<>
-			<form onSubmit={submitForm}>
-				<input type='text' placeholder='Search...' name='search' />
-				<button type='submit'>GO</button>
-			</form>
+			<ContainerStyled>
+				<SearchFormStyled onSubmit={submitForm}>
+					<SearchInputStyled placeholder='Search...' type='text'  name='search' />
+					<SearchButtonStyled type='submit'><FaSearchengin/></SearchButtonStyled>
+			</SearchFormStyled>
+			</ContainerStyled>
 		
 			<MovieList key={nanoid()} movies={movies} />
 		</>

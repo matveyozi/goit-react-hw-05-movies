@@ -7,7 +7,7 @@ export default function MovieList({ movies }) {
   return (
     <ContainerStyled>
       <StyleList>
-        {console.log(movies)}
+       
         {movies.map((item) => {
           return <Link key={item.id} to={`/movies/${item.id}`} state={{ from: location }}>
             <MovieListItem  element={item} >

@@ -16,7 +16,8 @@ export default function Reviews() {
 	
 	if (!reviews) return;
 	return (
-		
+		<>
+			<hr/>
 		<ul>
 		
 		{reviews.map(({ author, content, id }) => {
@@ -29,5 +30,7 @@ export default function Reviews() {
 			)
 		})}
 	</ul>
+		
+		</>
 	)
 }
