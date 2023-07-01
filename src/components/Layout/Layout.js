@@ -35,9 +35,8 @@ export default function Layout() {
 							</a>
 						</li>
 						<li>
-							<a href='href="https://telegram.me/matviyozi' target="_blank" rel='noopener nofollow noreferrer'>
+							<a href='https://telegram.me/matviyozi' target="_blank" rel='noopener nofollow noreferrer'>
 							<FaTelegram/>
-
 							</a>
 						</li>
 						<li>
